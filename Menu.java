@@ -17,19 +17,28 @@ public class Menu {
         int ch;
         while(true){
             System.out.println("Welcom to Vikasietum Pizza");
-            System.out.println("Select Option 1.Pizza 2.Sides")
-            
+            System.out.println("Select Option 1.VegPizza 2.NonVeg Pizza 2.Sides");
+            int number;
+
             ch=sc.nextInt();
             switch(ch){
                 case 1:
-                    System.out.println("Veg Options :-");
-                    System.out.println("Cheese and corn");
-                    System.out.println("Paneer Tikka");
-                    System.out.println("Delux Veggi");
-                    System.out.println("Delux Veggi");
-                    
+                 number =1;
+                System.out.println("Veg Pizza options:-");
+                for(String item:vegPizzaInventory.stock.keySet()){
+                    System.out.println("\t"+number+" "+item);
+                    number++;
+                }
+              
+            
                 break;
                 case 2:
+                 number =1;
+                System.out.println("Non - Veg Pizza options:-");
+                for(String item:nonVegPizzaInventory.stock.keySet()){
+                    System.out.println("\t"+number+" "+item);
+                    number++;
+                } 
                 break;
                 case 3:
                 break;

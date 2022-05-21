@@ -11,9 +11,7 @@ public class Inventory {
 
         void initialInventory(){
        
-            stock.put("Delux Veggi",2);
-            stock.put("Cheese and corn",3);
-            stock.put("Paneer Tikka",3);
+          
             stock.put("Chicken Tikka",3);
             stock.put("Non-veg Supreme",3);
             stock.put("Pepper Barbecue Chicken",3);
