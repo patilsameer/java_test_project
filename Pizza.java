@@ -2,14 +2,18 @@ public class Pizza{
     public String name;
     public int size;
     public int price;
+    public boolean veg;
+    public String crust; 
 
-    public Pizza(String name,int size,int price){
+    public Pizza(String name,int size,int price,boolean veg,String crust){
         this.name=name;
         this.size=size;
         this.price=price;
+        this.veg=veg;
+        this.crust=crust;
     }
 
     public String toString(){
-        return name + " " + size + " " + price;
+        return " Name = "+ name + ", Size = " + size + ", price = " + price + ", veg = " + veg + ", Crust = " + crust;
     }
 }

@@ -3,8 +3,10 @@ import java.util.Vector;
 public class TestApp {
 
     void initApp(Vector<Pizza> v){
-        Pizza obj=new Pizza("name", 1, 1);
+        Pizza obj=new Pizza("name", 1, 1,true);
+        Pizza obj2=new Pizza("mypizza", 1,  1, true);
         v.add(obj);
+        v.add(obj2);
 
     }
 
