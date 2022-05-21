@@ -2,8 +2,9 @@ import java.util.*;
 public class Inventory {
 
     public class Crust{
-        public HashMap<String,Integer> stock=null;
         
+        public HashMap<String,Integer> stock=null;
+    
         public Crust(){
             stock=new HashMap<>();
             initialInventory();
