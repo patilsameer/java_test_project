@@ -1,17 +1,22 @@
-import java.nio.channels.CancelledKeyException;
+import java.util.HashMap;
 import java.util.Vector;
 
 public class TestApp {
 
     void initPizza(Vector<Pizza> v){
-
-        Pizza obj1=new Pizza("Delux Veggi", 1, 150,true, "New hand toasted");
+        Pizza obj1;
+        
+        
+            obj1=new Pizza("Delux Veggi", 1, 150,true, "New hand toasted");
+            v.add(obj1);        
+            System.out.println("out of stock Delux Veggi");
+        
         Pizza obj2=new Pizza("Delux Veggi", 2, 200, true,"wheat thin crust");
         Pizza obj3=new Pizza("Non-veg Supreme", 1, 150,false, "New hand toasted");
         Pizza obj4=new Pizza("Delux Veggi", 2, 200, false,"wheat thin crust");
         
         
-        v.add(obj1);
+
         v.add(obj2);
         v.add(obj3);
         v.add(obj4);
@@ -32,16 +37,15 @@ public class TestApp {
         store.add(obj1);
         store.add(obj2);
     }
+    
 
     public static void main(String[] args){
         //create inventory
         Inventory inventory=new Inventory();
-        inventory.stock.put("Delux Veggi",2);
-        inventory.stock.put("Non-veg Supreme",3);
-        inventory.stock.put("black Olive",3);
-        inventory.stock.put("Capsicum",3);
-        inventory.stock.put("Cold Dring",3);
-        inventory.stock.put("Mouse Cake",3);
+       
+        for(String item:inventory.stock.keySet()){
+            System.out.println(item);
+        }
         
         
 
