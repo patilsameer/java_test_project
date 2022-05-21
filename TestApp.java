@@ -41,13 +41,23 @@ public class TestApp {
 
     public static void main(String[] args){
         //create inventory
-        Inventory inventory=new Inventory();
+        Inventory inventory=new Inventory(); // creating inventory object
+        Inventory.VegPizza vegPizzaInventory=inventory.new VegPizza();// vegpizza inventory 
+        Inventory.NonVegPizza nonVegPizzaInventory=inventory.new NonVegPizza();//nonvegpizza inventory
+        Inventory.VegTopping vegToppingInventory=inventory.new VegTopping();//vegtoping inventory;
+        Inventory.NonVegTopping nonVegToppingInventory=inventory.new NonVegTopping();//nonVegToppings;
+        Inventory.Sides sidesInventory=inventory.new Sides();//sides inventory;
        
-        for(String item:inventory.stock.keySet()){
-            System.out.println(item);
+        //Generating Menu from Inventory
+        System.out.println("Veg Pizza options:-");
+        for(String item:vegPizzaInventory.stock.keySet()){
+            System.out.println("\t"+item);
         }
         
-        
+        System.out.println("Non - Veg Pizza options:-");
+        for(String item:nonVegPizzaInventory.stock.keySet()){
+            System.out.println("\t"+item);
+        }
 
         // initilize all data of pizzafactory
         Vector<Pizza> pizzaStore=new Vector<>();
