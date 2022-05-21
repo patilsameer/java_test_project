@@ -7,6 +7,9 @@ public class Slide {
         this.price=price;
     }
 
+    public void setPrice(int price){
+        this.price=price;
+    }
     public String toString(){
         return " Slide Name = "+name+ ", price = "+price; 
     }

@@ -13,6 +13,10 @@ public class Pizza{
         this.crust=crust;
     }
 
+    public void setPrice(int price){
+        this.price=price;
+
+    }
     public String toString(){
         return " Name = "+ name + ", Size = " + size + ", price = " + price + ", veg = " + veg + ", Crust = " + crust;
     }

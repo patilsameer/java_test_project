@@ -4,6 +4,7 @@ import java.util.Vector;
 public class TestApp {
 
     void initPizza(Vector<Pizza> v){
+
         Pizza obj1=new Pizza("Delux Veggi", 1, 150,true, "New hand toasted");
         Pizza obj2=new Pizza("Delux Veggi", 2, 200, true,"wheat thin crust");
         Pizza obj3=new Pizza("Non-veg Supreme", 1, 150,false, "New hand toasted");
@@ -20,7 +21,7 @@ public class TestApp {
     void initToppings(Vector<Toppings> store){
             Toppings obj1=new Toppings("black Olive",
              20, true);
-            Toppings obj2=new Toppings("Chicken Tikka", 35, false);
+            Toppings obj2=new Toppings("Capsicum", 35, false);
             store.add(obj1);
             store.add(obj2);
     }
@@ -33,6 +34,17 @@ public class TestApp {
     }
 
     public static void main(String[] args){
+        //create inventory
+        Inventory inventory=new Inventory();
+        inventory.stock.put("Delux Veggi",2);
+        inventory.stock.put("Non-veg Supreme",3);
+        inventory.stock.put("black Olive",3);
+        inventory.stock.put("Capsicum",3);
+        inventory.stock.put("Cold Dring",3);
+        inventory.stock.put("Mouse Cake",3);
+        
+        
+
         // initilize all data of pizzafactory
         Vector<Pizza> pizzaStore=new Vector<>();
         Vector<Toppings> toppingStore=new Vector<>();

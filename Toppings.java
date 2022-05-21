@@ -9,6 +9,10 @@ public class Toppings {
         this.veg=veg;
     }
 
+    public void setPrice(int price){
+        this.price=price;
+
+    }
     public String toString(){
         return " Topping Name = "+name+ ", price = "+price+", veg = " + veg; 
     }
