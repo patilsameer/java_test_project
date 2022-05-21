@@ -1,6 +1,37 @@
 import java.util.*;
 public class Inventory {
 
+    public class Crust{
+        public HashMap<String,Integer> stock=null;
+        
+        public Crust(){
+            stock=new HashMap<>();
+            initialInventory();
+        }
+
+        void initialInventory(){          
+            stock.put("New hand tossed",3);
+            stock.put("Wheat thin crust",3);
+            stock.put("Cheese Burst",3);
+            stock.put("Fresh pan pizza",3);
+        }
+        public void addInventory(String value,int cnt){
+           stock.put(value,cnt);
+        }
+    
+        public  boolean getInventory(String key){
+            if(stock.get(key)>0)
+                return true;
+            return false;
+        }
+
+        public void setInventory(String key,int value){
+
+            int cnt=stock.get(key);
+            stock.replace(key, cnt, cnt+value);
+        }
+    }//crust end
+
     public class NonVegPizza{
         public HashMap<String,Integer> stock=null;
         
@@ -31,7 +62,7 @@ public class Inventory {
             int cnt=stock.get(key);
             stock.replace(key, cnt, cnt+value);
         }
-     }//
+     }//non-veg pizza end
 
     public class VegPizza{
         public HashMap<String,Integer> stock=null;
@@ -43,7 +74,7 @@ public class Inventory {
 
         void initialInventory(){
        
-            stock.put("Delux Veggi",2);
+            stock.put("Delux Veggi",0);
             stock.put("Cheese and corn",3);
             stock.put("Paneer Tikka",3);
           

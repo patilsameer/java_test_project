@@ -18,26 +18,35 @@ public class Menu {
         while(true){
             System.out.println("Welcom to Vikasietum Pizza");
             System.out.println("Select Option 1.VegPizza 2.NonVeg Pizza 2.Sides");
-            int number;
+            int number;//for labling pizza 
+            int ch2;//for selecting pizza option
 
             ch=sc.nextInt();
             switch(ch){
                 case 1:
                  number =1;
-                System.out.println("Veg Pizza options:-");
-                for(String item:vegPizzaInventory.stock.keySet()){
-                    System.out.println("\t"+number+" "+item);
-                    number++;
-                }
+                 System.out.println("Veg Pizza options:-"); 
+                 for(String item:vegPizzaInventory.stock.keySet()){
+                        //display only if inventory is available
+                        if(vegPizzaInventory.getInventory(item)){
+                            System.out.println("\t"+number+" "+item);
+                            number++;
+                        }
+                 }
+                 ch2=sc.nextInt();
+
               
             
                 break;
                 case 2:
                  number =1;
-                System.out.println("Non - Veg Pizza options:-");
-                for(String item:nonVegPizzaInventory.stock.keySet()){
-                    System.out.println("\t"+number+" "+item);
-                    number++;
+                 System.out.println("Non - Veg Pizza options:-");
+                 for(String item:nonVegPizzaInventory.stock.keySet()){
+                     //display only if inventory is available
+                     if(nonVegPizzaInventory.getInventory(item)){
+                        System.out.println("\t"+number+" "+item);
+                        number++;
+                    }
                 } 
                 break;
                 case 3:
