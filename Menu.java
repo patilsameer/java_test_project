@@ -71,13 +71,21 @@ public class Menu {
                 }else{
                 System.out.println("You can Order these:-");
                 for(int i:aMTV.keySet()){
-                    System.out.println(i+" "+aMTV.get(i).itemName);
-                    System.out.println("\t SubMenu:-");
-                    for(int i1:aMTV.get(i).stock.keySet()){
-                        System.out.println("\t\t"+i1+" "+aMTV.get(i).stock.get(i1).toString());
-                    }
-                }
-            }
+                    System.out.println("Memu NUmber:-"+i+" "+aMTV.get(i).itemName);
+                    
+                }// for
+                }//else
+                System.out.println("Select Menu:-");
+                int mm=sc.nextInt();
+                System.out.println("\t SubMenu:-");
+                    for(int i1:aMTV.get(mm).stock.keySet()){
+                        System.out.println("\t\tSubMenuNo:-"+i1+" "+aMTV.get(mm).stock.get(i1).toString());
+                    }//
+                    System.out.println("Select Sub Menu:-");
+                    int sm=sc.nextInt();
+                    
+
+                //else
                 /* //this code works using Inventory.java & MenuItems.java file
                 number =1; 
                 System.out.println("Veg Pizza options:-"); 
