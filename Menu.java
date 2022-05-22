@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
+import javax.imageio.ImageTranscoder;
 
 public class Menu {
     
     public static String getCrust(MenuItems.Crust crust){
         int number=1;
         Scanner sc=new Scanner(System.in);
-        System.out.println("Curst  options:-"); 
+        System.out.println("Crust  options:-"); 
         for(String item:crust.stock.values()){
                 System.out.println("\t"+number+" "+item);
                 number++;
@@ -40,19 +43,40 @@ public class Menu {
         MenuItems.Sides sidesMenuItem=menuItem.new Sides();//sides MenuItem;
         MenuItems.Crust crustMenuItem=menuItem.new Crust();//crust MenuItem
        
+
+        //attempt to crate automenut class
+        HashMap<Integer,AutoMenuItems> aMTV=new HashMap();
         Scanner sc=new Scanner(System.in);
         int ch;
         int number;
         
         while(true){
             System.out.println("Welcom to Vikasietum Pizza");
-            System.out.println("Select Option 1.VegPizza 2.NonVeg Pizza 2.Sides");
+            System.out.println("Select Option\n1 Order"+
+                                "\n2.Add New Item"+
+                                "\n3.Add SubMenu"+
+                                "\n4.Add Inventory"+
+                                "\n5.\n");
             ch=sc.nextInt(); 
             int pizzaChoice;  
             String pizzaName;
             String crust;    
             switch(ch){
                 case 1:
+                if(aMTV.size()==0){
+                    System.out.println("No Menu available, please add menu");
+                    
+                }else{
+                System.out.println("You can Order these:-");
+                for(int i:aMTV.keySet()){
+                    System.out.println(i+" "+aMTV.get(i).itemName);
+                    System.out.println("\t SubMenu:-");
+                    for(int i1:aMTV.get(i).stock.keySet()){
+                        System.out.println("\t\t"+i1+" "+aMTV.get(i).stock.get(i1).toString());
+                    }
+                }
+            }
+                /* //this code works using Inventory.java & MenuItems.java file
                 number =1; 
                 System.out.println("Veg Pizza options:-"); 
                     for(String item:vegPizzaMenuItem.stock.values()){
@@ -63,8 +87,23 @@ public class Menu {
                 pizzaName=vegPizzaMenuItem.stock.get(pizzaChoice);
                 System.out.println("You selected "+pizzaName);
                 crust=getCrust(crustMenuItem);
+                
+                */
+                //this code uses AutoInventory & AutoMenuItem files either above or this code
+                //shall be used.
                 break;
                 case 2:
+                //New code to add MenuItem
+                System.out.println("\nHard coded Menu Item VegPizza & NonVegPizza added");
+                AutoMenuItems aMT=new AutoMenuItems("VegPizza");
+                aMTV.put(aMTV.size(),aMT);
+                AutoMenuItems aMT2=new AutoMenuItems("NonVegPizza");
+                aMTV.put(aMTV.size(),aMT2);
+                //addint New Menu Item
+                // we can use user input- current code set using hard values
+
+
+              /*//this code works using Inventory.java & MenuItems.java file
                 number =1; 
                 System.out.println("Veg Pizza options:-"); 
                     for(String item:nonVegPizzaMenuItem.stock.values()){
@@ -73,7 +112,27 @@ public class Menu {
                     }
                     crust=getCrust(crustMenuItem);
                 break;
+                */
+                break;
                 case 3:
+                //New code to add SubMenu
+                System.out.println("Select Menu to add sub item:-");
+                for(int i:aMTV.keySet()){
+                    System.out.println(i+" "+aMTV.get(i).itemName);
+                }
+                System.out.println("Harde coded to add VeggiPizza please select 0");
+                int subchoice=sc.nextInt();
+                AutoMenuItems temp=aMTV.get(subchoice);
+                temp.stock.put(1,"VeggiPizza");
+                //adding inventory
+                //we can take input from user- current values are passed using hardset values
+
+                break;
+                case 4:
+                System.out.println("Work in progress");
+                break;
+                case 5:
+                System.out.println("Work in progress");
                 break;
                 default:
                     System.out.println("Invalid Option");
