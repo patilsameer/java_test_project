@@ -24,7 +24,7 @@ public class Menu {
 
     public static void main(String[] args){
         //create initial inventory
-        Inventory inventory=new Inventory(); // creating inventory object
+        /*Inventory inventory=new Inventory(); // creating inventory object
         Inventory.VegPizza vegPizzaInventory=inventory.new VegPizza();// vegpizza inventory 
         Inventory.NonVegPizza nonVegPizzaInventory=inventory.new NonVegPizza();//nonvegpizza inventory
         Inventory.VegTopping vegToppingInventory=inventory.new VegTopping();//vegtoping inventory;
@@ -42,7 +42,7 @@ public class Menu {
         MenuItems.NonVegTopping nonVegMenuItem=menuItem.new NonVegTopping();//nonVegToppings MenuItem;
         MenuItems.Sides sidesMenuItem=menuItem.new Sides();//sides MenuItem;
         MenuItems.Crust crustMenuItem=menuItem.new Crust();//crust MenuItem
-       
+       */
 
         //attempt to crate automenut class
         HashMap<Integer,AutoMenuItems> aMTV=new HashMap();
@@ -51,7 +51,9 @@ public class Menu {
         int number;
         
         while(true){
+            System.out.println("-------------------------------------------");
             System.out.println("Welcom to Vikasietum Pizza");
+            System.out.println("-------------------------------------------");
             System.out.println("Select Option\n1 Order"+
                                 "\n2.Add New Item"+
                                 "\n3.Add SubMenu"+
